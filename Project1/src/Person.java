@@ -55,32 +55,47 @@ public class Person {
 
     @Override
     public String toString() {
+        String result = "";
         switch (outputFormat){
             case TABLE:
             {
-                return  "Name: \t" + name +
-                        "\nCity: \t" + city +
-                        "\nAge: \t" + age +
-                        "\nHobbie: \t" + hobbie;
+                result = getTableOutput();
+                break;
             }
             case TEXT:
             {
-                return  "The person whoes name is :" + name +
-                        "lives in the city: " + city +
-                        "\nHe is " + age + "years old" +
-                        "and his hobbie is " + hobbie;
+                result = getTextOutput();
+                break;
             }
             case UNIVERSAL:
             {
-                return  name + "-name\n" +
-                        city + "-city\n" +
-                        age + "-age\n" +
-                        hobbie + "-hobbie\n";
+                result = getUniversalOutput();
+                break;
             }
         }
 
-        return "";
+        return result;
     }
 
+    private String getTableOutput() {
+        return  "Name: \t" + name +
+                "\nCity: \t" + city +
+                "\nAge: \t" + age +
+                "\nHobbie: \t" + hobbie;
+    }
+
+    private String getTextOutput() {
+        return  "The person whoes name is :" + name +
+                "lives in the city: " + city +
+                "\nHe is " + age + " years old" +
+                "and his hobbie is " + hobbie;
+    }
+
+    private String getUniversalOutput() {
+        return  name + "-name\n" +
+                city + "-city\n" +
+                age + "-age\n" +
+                hobbie + "-hobbie\n";
+    }
 
 }

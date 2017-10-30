@@ -1,3 +1,4 @@
 public enum PersonOutputFormat {
-    TABLE, TEXT, UNIVERSAL
+
+    TABLE, TEXT, UNIVERSAL;
 }
